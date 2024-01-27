@@ -1,0 +1,247 @@
+*{
+margin: 0;
+padding: 0%;
+border: none;
+outline: none;
+box-sizing: border-box;
+font-family: "poppins", sans-serif;
+}
+.table-border{
+    border-top: 2px solid white;
+}
+body{
+    display: flex;
+    }
+    .sidebar{
+        position: sticky;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 110px;
+        height: 100vh;
+        padding: 0 1.7rem;
+        color: rgb(255, 255, 255);
+        overflow: hidden;
+        transition: all 0.5s linear;
+        background:  #6E6E6E;
+        }
+ .sidebar:hover{
+    width: 240px;
+    transition: 0.5s;
+    }       
+ .logo{
+    height: 80px;
+    padding: 16px;
+    } 
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    }         
+.menu li{
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    }   
+.menu li:hover,
+.active{
+    background: rgba(147, 139, 139, 0.963);
+    }    
+.menu a{
+    color: aliceblue;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    }
+.menu a span {
+    overflow: hidden;
+    }  
+.menu a i {
+    font-size: 1.2rem;
+    }
+.Logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    }    
+
+
+.main--content{
+    position: relative;
+    background: #E3DDDD;
+    width: 100%;
+    padding: 1rem;
+    }    
+.header--wrapper img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    }    
+.header--wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background:#94863D ;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    }  
+.user--info{
+    display: flex;
+    align-items: center;
+    gap: 1;
+    } 
+.searh--box{
+    background: #E3DDDD;
+    border-radius: 15px;
+    color: rgba(113, 99, 186, 255);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px;
+    padding: 4px 12px;
+    }   
+.searh--box input {
+    background: transparent;
+    padding: 10px;
+    }              
+.searh--box i{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    }           
+.searh--box i:hover{
+    transform: scale(1.1);
+    }   
+
+
+
+
+
+
+.card--container{
+    background: #94863D;
+    padding: 1rem;
+    border-radius: 10px;
+    }   
+.card--wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    }   
+.main--title{
+    color: rgba(113, 99, 186, 255);
+    padding-bottom: 10px;
+    font-size: 15px;
+    }   
+.payment--card{
+    background: rgb(229, 223, 223);
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 230px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    }   
+.payment--card:hover{
+    transform: translateY(-5px);
+    }   
+.card--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    }  
+.amount{
+    display: flex;
+    flex-direction: column;
+    }      
+.title{
+    font-size: 16px;
+    font-weight: 200;
+    }  
+.amount-value{
+    margin-top: 4px;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight:500;
+    }            
+.icon{
+    color: aliceblue;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: rgb(118, 60, 60);
+    margin: 10px 0px;
+    } 
+    
+
+
+
+
+.tabular--wrapper{
+    background: #94863D;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+    }
+.table-container{
+    padding: 20px 0px;
+    width: 100%;
+    }    
+table{
+    width: 100%;
+    border-collapse: collapse;
+    }
+thead{
+    background: #94863D;
+    }
+    
+    tr{
+        border-top: 1px solid white;
+    }
+th{ 
+    padding: 15px;
+    text-align: left;
+    }
+tbody{
+    background: #94863D;
+    }
+td{
+    padding: 15px;
+    font-size: 14px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

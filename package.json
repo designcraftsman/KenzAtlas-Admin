@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "5": "^0.0.1",
+    "bootstrap": "^5.3.2",
+    "bootstrap5": "^1.1.9"
+  },
+  "name": "kenzatlasadmin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdani5364/kenz.Atlas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamdani5364/kenz.Atlas/issues"
+  },
+  "homepage": "https://github.com/hamdani5364/kenz.Atlas#readme",
+  "description": ""
+}
