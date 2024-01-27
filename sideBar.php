@@ -20,13 +20,13 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="article.php">
                     <i class="fa-solid fa-file"></i>
                     <span>Articles</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="user.php">
                     <i class="fa-solid fa-user"></i>
                     <span>Utulisateurs</span>
                 </a>
