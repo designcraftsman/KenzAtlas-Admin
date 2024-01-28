@@ -33,14 +33,14 @@
             </li>
             <li>
                 <a href="">
-                    <i class="fas fa-cog"></i>
-                    <span>Parametres</span>
+                    <i class="fa-solid fa-message"></i>
+                    <span>Messages</span>
                 </a>
             </li>
             <li class="Logout">
-                <a href="">
+                <a href="signout.php">
                     <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
+                    <span>Se Déconnecter</span>
                 </a>
             </li>
 

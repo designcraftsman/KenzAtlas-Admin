@@ -40,7 +40,7 @@ if(!isset($_SESSION['emailAdmin'])){
                     <h2 class="fs-6 fw-bold">Titre</h2>
                 </div>
                 <div class="col-2 m-auto fs-6">
-                    <h2 class="fs-6 fw-bold">Titre</h2>
+                    <h2 class="fs-6 fw-bold">Nombre de vue</h2>
                 </div>
                 <div class="col-2 m-auto">
                     
@@ -61,7 +61,7 @@ if(!isset($_SESSION['emailAdmin'])){
                     <?php echo($article['vueArticle']); ?>
                 </div>
                 <div class="col-2 m-auto">
-                    <a href="" class="btn btn-primary text-secondary "><i class="fa-solid fa-pen m-1"></i> Modifier</a>
+                    <a href="editArticle.php?idArticle=<?php echo($article['idArticle']); ?>" class="btn btn-primary text-secondary "><i class="fa-solid fa-pen m-1"></i> Modifier</a>
                 </div>
                 <div class="col-2 m-auto">
                 <a href="deleteArticle.php?idArticle=<?php echo($article['idArticle']); ?>" class="btn btn-danger "><i class="fa-solid fa-trash m-1"></i> Supprimer</a>
