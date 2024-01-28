@@ -20,14 +20,7 @@
     <?php include('sideBar.php'); ?>
     
     <div class="main--content d-block ">
-      <div class="header--wrapper">
-        <div class="header--title">
-        </div>
-       <div class="user--info">
-        
-         <img src="image/WhatsApp Image 2024-01-04 at 18.29.28.jpeg" alt="">
-       </div> 
-      </div>
+    <?php include('head.php'); ?>
       <div class="container-fluid    mt-2">
         <div class="d-flex justify-content-between rounded align-items-center  ">
             <h1 class="fs-4 text-dark fw-bold">Tous les articles</h1>

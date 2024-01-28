@@ -20,17 +20,7 @@
 
 
     <div class="main--content">
-      <div class="header--wrapper">
-        <div class="header--title">
-        </div>
-       <div class="user--info">
-        <div class="searh--box">
-        <i class="fa-solid fa-search"></i>
-        <input type="text" placeholder="Search">
-         </div>
-         <img src="image/WhatsApp Image 2024-01-04 at 18.29.28.jpeg" alt="">
-       </div> 
-      </div>
+    <?php include('head.php'); ?>
       <div class="card--container">
         <div class="card--wrapper">
             <div class="payment--card">
@@ -151,7 +141,7 @@
                     </tr>
                     <tbody>
                     <?php foreach($commandes as $commande){ ?>
-                        <tr class="  align-items-center" >
+                        <tr class="  align-items-center border-top" >
                             <th scope="row "><?php echo($commande['numeroCommande']); ?></th>
                             <td><?php echo($commande['dateCommande']); ?></td>
                             <td><?php echo($commande['prenomClient'].' '.$commande['nomClient']); ?></td>

@@ -20,14 +20,7 @@
     <?php include('sideBar.php'); ?>
     
     <div class="main--content d-block ">
-      <div class="header--wrapper">
-        <div class="header--title">
-        </div>
-       <div class="user--info">
-        
-         <img src="image/WhatsApp Image 2024-01-04 at 18.29.28.jpeg" alt="">
-       </div> 
-      </div>
+    <?php include('head.php'); ?>
       <div class="container-fluid    mt-2">
         <div class="d-flex justify-content-between rounded align-items-center  ">
             <h1 class="fs-4 text-dark fw-bold">Tous les produits</h1>
@@ -47,10 +40,10 @@
                     dh
                 </div>
                 <div class="col-2 m-auto">
-                    <a href="" class="btn btn-primary text-secondary "><i class="fa-solid fa-pen m-1"></i> Modifier</a>
+                    <a href="productEdit.php?idProduit=<?php echo($produit['idProduit']); ?>" class="btn btn-primary text-secondary "><i class="fa-solid fa-pen m-1"></i> Modifier</a>
                 </div>
                 <div class="col-2 m-auto">
-                <a href="" class="btn btn-danger "><i class="fa-solid fa-trash m-1"></i> Supprimer</a>
+                <a href="deleteProduct.php?idProduit=<?php echo($produit['idProduit']);?>" class="btn btn-danger "><i class="fa-solid fa-trash m-1"></i> Supprimer</a>
                 </div>
             </div>
             <?php } ?>

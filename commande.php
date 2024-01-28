@@ -20,14 +20,7 @@
     <?php include('sideBar.php'); ?>
     
     <div class="main--content d-block ">
-      <div class="header--wrapper">
-        <div class="header--title">
-        </div>
-       <div class="user--info">
-        
-         <img src="image/WhatsApp Image 2024-01-04 at 18.29.28.jpeg" alt="">
-       </div> 
-      </div>
+    <?php include('head.php'); ?>
       <div class="container-fluid    mt-2">
          <h1 class="fs-4 text-dark fw-bold">Tous les commandes</h1>
         <div class="container-fluid  p-2 rounded    ">
@@ -92,7 +85,7 @@
                     <p class="fs-6 "><?php echo($commande['dateCommande']); ?></p>
                 </div>
                 <div class="col-2">
-                <a href="" class="btn btn-primary  text-secondary "><i class="fa-solid fa-circle-info m-1"></i> Détails</a>
+                <a href="commandeDetails.php?numeroCommande=<?php echo($commande['numeroCommande']);?>" class="btn btn-primary  text-secondary "><i class="fa-solid fa-circle-info m-1"></i> Détails</a>
                 </div>
             </div>
             <?php } ?>

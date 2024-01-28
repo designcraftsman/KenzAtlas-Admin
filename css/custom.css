@@ -75,7 +75,7 @@ body{
     position: relative;
     background: #E3DDDD;
     width: 100%;
-    padding: 1rem;
+    
     }    
 .header--wrapper img{
     width: 50px;
@@ -89,7 +89,6 @@ body{
     align-items: center;
     flex-wrap: wrap;
     background:#94863D ;
-    border-radius: 10px;
     padding: 10px 2rem;
     margin-bottom: 1rem;
     width: 100%;
@@ -130,7 +129,7 @@ body{
 .card--container{
     background: #94863D;
     padding: 1rem;
-    border-radius: 10px;
+    
     }   
 .card--wrapper{
     display: flex;
@@ -196,7 +195,7 @@ body{
 .tabular--wrapper{
     background: #94863D;
     margin-top: 1rem;
-    border-radius: 10px;
+    
     padding: 2rem;
     }
 .table-container{
