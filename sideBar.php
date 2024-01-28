@@ -2,7 +2,7 @@
         <div class="logo"></div>
         <ul class="menu">
             <li class="active">
-                <a href="index.php">
+                <a href="dashboard.php">
                     <i class="fa-solid fa-house"></i>
                     <span>Tableau de bord</span>
                 </a>

@@ -1,4 +1,9 @@
 <?php
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
     if($_GET['idProduit']){
         $idProduit = $_GET['idProduit'];
         include('connection.php');
@@ -129,7 +134,7 @@
                         }
                     } else {
                         // Insert data into the database
-                            $sqlQuery = "UPDATE produit 
+                        $sqlQuery = "UPDATE produit 
                             SET imageProduit1 = :imageProduit1,  
                                 nomProduit = :nomProduit, 
                                 sousTitreProduit = :sousTitreProduit, 
@@ -141,6 +146,7 @@
                             WHERE idProduit = :idProduit";
                         $insertProduit = $db->prepare($sqlQuery);
                         $insertProduit->execute([
+                            'idProduit'=>  $idProduit,
                             'imageProduit1' => $imageProduit1,
                             'nomProduit' => $nomProduit,
                             'prixProduit'=> $prixProduit,

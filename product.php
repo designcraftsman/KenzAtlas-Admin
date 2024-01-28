@@ -1,4 +1,9 @@
 <?php 
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
     include('connection.php');
     $sqlQuery = "SELECT * FROM produit  ORDER BY `produit`.`idProduit` DESC ;";
     $produitsStatement = $db->prepare($sqlQuery);

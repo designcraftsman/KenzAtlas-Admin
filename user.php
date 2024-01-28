@@ -1,4 +1,9 @@
 <?php 
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
     include('connection.php');
     $sqlQuery = "SELECT * FROM utulisateur  ORDER BY `utulisateur`.`idUtulisateur` DESC ;";
     $utulisateursStatement = $db->prepare($sqlQuery);

@@ -1,4 +1,11 @@
-<?php include('connection.php'); ?>
+<?php
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
+include('connection.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

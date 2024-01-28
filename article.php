@@ -1,4 +1,9 @@
 <?php 
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
     include('connection.php');
     $sqlQuery = "SELECT * FROM articles  ORDER BY `articles`.`idArticle` DESC ;";
     $articlesStatement = $db->prepare($sqlQuery);
@@ -59,7 +64,7 @@
                     <a href="" class="btn btn-primary text-secondary "><i class="fa-solid fa-pen m-1"></i> Modifier</a>
                 </div>
                 <div class="col-2 m-auto">
-                <a href="" class="btn btn-danger "><i class="fa-solid fa-trash m-1"></i> Supprimer</a>
+                <a href="deleteArticle.php?idArticle=<?php echo($article['idArticle']); ?>" class="btn btn-danger "><i class="fa-solid fa-trash m-1"></i> Supprimer</a>
                 </div>
             </div>
             <?php } ?>

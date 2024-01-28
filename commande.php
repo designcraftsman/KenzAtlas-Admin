@@ -1,4 +1,9 @@
 <?php 
+session_start(); 
+if(!isset($_SESSION['emailAdmin'])){
+    header("Location: error.php");
+    exit();
+}
     include('connection.php');
     $sqlQuery = "SELECT * FROM commandes  ORDER BY `commandes`.`numeroCommande` DESC ;";
     $commandesStatement = $db->prepare($sqlQuery);
@@ -37,10 +42,15 @@
                 <div class="col-2  fs-6">
                     <p class="fs-6 fw-bold">Telephone</p>
                 </div>
-                <div class="col-2 ">
+                <div class="col-1 ">
                     <p class="fs-6 fw-bold">Date</p>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-1">
+                    <p class="fs-6 fw-bold">Etat</p>
+                </div>
+                <div class="col-2">
+                     
+                </div>
                 
             </div>
             <?php foreach($commandes as $commande){?>
@@ -81,8 +91,11 @@
                 <div class="col-2 fs-6">
                     <p class="fs-6 "><?php echo($commande['telephoneClient']); ?></p>
                 </div>
-                <div class="col-2">
+                <div class="col-1">
                     <p class="fs-6 "><?php echo($commande['dateCommande']); ?></p>
+                </div>
+                <div class="col-1">
+                <p class="fs-6 "><?php echo($commande['statutCommande']); ?></p>
                 </div>
                 <div class="col-2">
                 <a href="commandeDetails.php?numeroCommande=<?php echo($commande['numeroCommande']);?>" class="btn btn-primary  text-secondary "><i class="fa-solid fa-circle-info m-1"></i> Détails</a>

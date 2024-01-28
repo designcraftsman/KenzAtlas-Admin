@@ -1,4 +1,9 @@
 <?php
+    session_start(); 
+    if(!isset($_SESSION['emailAdmin'])){
+        header("Location: error.php");
+        exit();
+    }
     if(isset($_GET['numeroCommande'])){
         $numeroCommande = $_GET['numeroCommande'];
         include('connection.php');
@@ -65,6 +70,37 @@
                                     }
                                 ?>
         </p>
+        <hr >
+        <p class="fs-5 fw-lighter"><span class="fw-bold m-3">Etat de la commande :</span> <?php echo($commande['statutCommande']); ?></p>
+        <?php if($commande['statutCommande']==="non confirme"){ ?>
+        <form method="POST">
+            <input type="text" class="d-none" name="statutCommande" value="Confirmé">
+            <button type="submit" class="btn btn-primary btn-lg text-secondary fw-lighter">Confirmer la commande</button>
+        </form>
+        <?php } ?>
+        <?php    
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Check if the statutCommande is set in the POST data
+                if (!isset($_POST['statutCommande'])) {
+                    echo('Erreur D\'envoie !');
+                    return;
+                }
+            
+                $statutCommande = $_POST['statutCommande'];
+                $numeroCommande = $commande['numeroCommande'];
+            
+                include('connection.php');
+            
+                $sqlQuery = "UPDATE commandes 
+                             SET statutCommande = :statutCommande  
+                             WHERE numeroCommande = :numeroCommande ";
+                $updateCommande = $db->prepare($sqlQuery);
+                $updateCommande->execute([
+                    'statutCommande'=> $statutCommande,
+                    'numeroCommande'=> $numeroCommande,
+                ]);
+            }
+        ?>
     </div>
 </div>
 </body>
