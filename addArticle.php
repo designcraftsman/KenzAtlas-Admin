@@ -12,11 +12,16 @@ require_once('connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KenzAtlas-Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>KenzAtlas-Nouveau Article</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-dark text-white">
-    <div class="container">
+<body >
+<?php include('sideBar.php'); ?>
+    <div class="main--content">
+    <?php include('head.php'); ?>
+    <div class="container-fluid">
         <div class="row p-5">
         <form method="Post" enctype="multipart/form-data">
                 <h1 class="text-center fw-bolder">Ajouter un article</h1>
@@ -38,14 +43,11 @@ require_once('connection.php');
                     <label for="exampleFormControlTextarea1" class="form-label">Ajouter un texte :</label>
                     <textarea class="form-control" name="contenuArticle" rows="10"></textarea>
                 </div> 
-                <button type="submit" class="btn btn-danger w-100 fs-5 fw-bolder p-3">Ajouter Article</button>
+                <button type="submit" class="btn btn-primary text-secondary  w-100 fs-5 fw-bolder p-3">Ajouter Article</button>
         </form>
         <?php
-           if (!isset($_POST['titreArticle']) || !isset($_POST['contenuArticle']) || !isset($_POST['categorieArticle']) || !isset($_FILES['imgArticle']) && $_FILES['imgArticle']['error'] == 0) 
+           if (isset($_POST['titreArticle']) && isset($_POST['contenuArticle']) && isset($_POST['categorieArticle']) && isset($_FILES['imgArticle']) && $_FILES['imgArticle']['error'] == 0) 
            {
-               echo('Erreur D\'envoie !');
-               return;
-           }
            $titreArticle = $_POST['titreArticle'];	
            $contenuArticle = $_POST['contenuArticle'];
            $categorieArticle = $_POST['categorieArticle'];
@@ -67,8 +69,10 @@ require_once('connection.php');
                        }else{
                         echo('Erreur : L\'extension de l\'image n\'est pas autorisée');
                        }
+            }
         ?>
         </div>
+    </div>
     </div>
     
 </body>

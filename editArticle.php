@@ -113,8 +113,8 @@ if(!isset($_SESSION['emailAdmin'])){
                             'categorieArticle' => $categorieArticle,
                             'contenuArticle'=> $contenuArticle,
                             'idArticle'=>$idArticle,
-                        ]);
-                    }}else{
+                        ]);}
+                        }else{
                         $sqlQuery = "UPDATE articles 
                             SET 
                                 titreArticle = :titreArticle, 
