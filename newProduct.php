@@ -72,7 +72,6 @@ include('connection.php');
                     isset($_POST['ingredientsProduit']) &&
                     isset($_POST['prixProduit']) &&
                     isset($_POST['categorieProduit']) &&
-                    isset($_POST['etatProduit']) &&
                     isset($_FILES['imageProduit1']) && $_FILES['imageProduit1']['error'] == 0 
                 ) {
                     // Assigning values to variables
@@ -82,7 +81,9 @@ include('connection.php');
                     $descriptionProduit = $_POST['descriptionProduit']; // Added missing field
                     $ingredientsProduit = $_POST['ingredientsProduit']; // Added missing field
                     $categorieProduit = $_POST['categorieProduit'];
-                    $etatProduit = $_POST['etatProduit'];
+                    if(!isset($_POST['etatProduit'])){
+                        $etatProduit = "unique";
+                    }
                     // Validate and upload images
                     $imageUploadErrors = [];
 
