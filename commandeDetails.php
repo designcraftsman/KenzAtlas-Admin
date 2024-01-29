@@ -72,7 +72,7 @@
         </p>
         <hr >
         <p class="fs-5 fw-lighter"><span class="fw-bold m-3">Etat de la commande :</span> <?php echo($commande['statutCommande']); ?></p>
-        <?php if($commande['statutCommande']==="non confirme"){ ?>
+        <?php if($commande['statutCommande']==="Non confirmé"){ ?>
         <form method="POST">
             <input type="text" class="d-none" name="statutCommande" value="Confirmé">
             <button type="submit" class="btn btn-primary btn-lg text-secondary fw-lighter">Confirmer la commande</button>

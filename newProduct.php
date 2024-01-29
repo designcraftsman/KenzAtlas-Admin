@@ -83,6 +83,8 @@ include('connection.php');
                     $categorieProduit = $_POST['categorieProduit'];
                     if(!isset($_POST['etatProduit'])){
                         $etatProduit = "unique";
+                    }else{
+                        $etatProduit = $_POST ['etatProduit'];
                     }
                     // Validate and upload images
                     $imageUploadErrors = [];
