@@ -30,16 +30,16 @@ if(!isset($_SESSION['emailAdmin'])){
          <h1 class="fs-4 text-dark fw-bold">Tous les commandes</h1>
         <div class="container-fluid  p-2 rounded    ">
         <div class="row mt-1 border-top border-dark p-2">
-                <div class="col-2 ">
+                <div class="col-1 ">
                     <p class="fs-6 fw-bold">Numero Commande</p>
                 </div>
-                <div class="col-2 ">
+                <div class="col-1 ">
                     <p class="fs-6 fw-bold">Client</p>
                 </div>
-               <div class="col-2">
+               <div class="col-3">
                     <p class="fs-6 fw-bold">Produit(s)</p>
                </div>
-                <div class="col-2  fs-6">
+                <div class="col-1  fs-6">
                     <p class="fs-6 fw-bold">Telephone</p>
                 </div>
                 <div class="col-1 ">
@@ -49,26 +49,25 @@ if(!isset($_SESSION['emailAdmin'])){
                     <p class="fs-6 fw-bold">Etat</p>
                 </div>
                 <div class="col-2">
-                     
+                     <p class="fs-6 fw-bold">Prix Total</p>
                 </div>
                 
             </div>
             <?php foreach($commandes as $commande){?>
             <div class="row border-top border-dark p-2 d-flex align-items-center ">
-                <div class="col-2  ">
+                <div class="col-1  ">
                     <p class="fs-6 "><?php echo($commande['numeroCommande']); ?></p>
                 </div>
-                <div class="col-2 ">
+                <div class="col-1 ">
                     <p class="fs-6 "><?php echo($commande['prenomClient'].' '.$commande['nomClient']); ?></p>
                 </div>
-                <div class="col-2">
-                    <p class="fs-6">
-                    <div class="col-2">
+                        
+                <div class="col-3">
                 <p class="fs-6">
                 <?php 
                                     include('connection.php');
                                     $id = $commande['idUtulisateur'];
-                                    $sqlQuery = "SELECT idProduit FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
+                                    $sqlQuery = "SELECT * FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
                                     $produitsIdStatement = $db->prepare($sqlQuery);
                                     $produitsIdStatement->bindParam(':numeroCommande', $commande['numeroCommande'], PDO::PARAM_STR);
                                     $produitsIdStatement->execute();
@@ -81,14 +80,13 @@ if(!isset($_SESSION['emailAdmin'])){
                                         $produitStatement->execute();
                                         $produit = $produitStatement->fetch(PDO::FETCH_ASSOC);
                                         $prixTotal += $produit['prixProduit'];
-                                        echo($produit['nomProduit'].'<br>');
+                                        echo('-'.$produit['nomProduit'].'(x'.$id['quantiteCommandés'].')'.'<br>');
                                     }
                 ?>
                 </p>
+                
                 </div>
-                    </p>
-                </div>
-                <div class="col-2 fs-6">
+                <div class="col-1 fs-6">
                     <p class="fs-6 "><?php echo($commande['telephoneClient']); ?></p>
                 </div>
                 <div class="col-1">
@@ -96,6 +94,9 @@ if(!isset($_SESSION['emailAdmin'])){
                 </div>
                 <div class="col-1">
                 <p class="fs-6 "><?php echo($commande['statutCommande']); ?></p>
+                </div>
+                <div class="col-1">
+                <p class="fs-6 "><?php echo($prixTotal);?> dh</p>
                 </div>
                 <div class="col-2">
                 <a href="commandeDetails.php?numeroCommande=<?php echo($commande['numeroCommande']);?>" class="btn btn-primary  text-secondary "><i class="fa-solid fa-circle-info m-1"></i> Détails</a>

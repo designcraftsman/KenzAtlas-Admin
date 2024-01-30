@@ -154,19 +154,22 @@
                                 <?php 
                                     include('connection.php');
                                     $id = $commande['idUtulisateur'];
-                                    $sqlQuery = "SELECT idProduit FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
+                                    $sqlQuery = "SELECT * FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
                                     $produitsIdStatement = $db->prepare($sqlQuery);
                                     $produitsIdStatement->bindParam(':numeroCommande', $commande['numeroCommande'], PDO::PARAM_STR);
                                     $produitsIdStatement->execute();
                                     $produitsId = $produitsIdStatement->fetchAll(PDO::FETCH_ASSOC);
                                     $prixTotal = 0;
                                     foreach($produitsId as $id){
+                                        include('connection.php');
                                         $sqlQuery = "SELECT nomProduit, prixProduit FROM produit WHERE idProduit = :id;";
                                         $produitStatement = $db->prepare($sqlQuery);
+                                        $quantiteCommandés = $id['quantiteCommandés'];
                                         $produitStatement->bindParam(':id', $id['idProduit'], PDO::PARAM_STR);
                                         $produitStatement->execute();
                                         $produit = $produitStatement->fetch(PDO::FETCH_ASSOC);
-                                        $prixTotal += $produit['prixProduit'];
+                                        $prixProduit = $produit['prixProduit'];
+                                        $prixTotal += ($prixProduit * $quantiteCommandés);
                                         echo($produit['nomProduit'].'<br>');
                                     }
                                 ?>

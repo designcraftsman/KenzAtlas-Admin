@@ -53,7 +53,7 @@
         <?php 
                                     include('connection.php');
                                     $id = $commande['idUtulisateur'];
-                                    $sqlQuery = "SELECT idProduit FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
+                                    $sqlQuery = "SELECT * FROM produitsCommandés WHERE numeroCommande = :numeroCommande;";
                                     $produitsIdStatement = $db->prepare($sqlQuery);
                                     $produitsIdStatement->bindParam(':numeroCommande', $commande['numeroCommande'], PDO::PARAM_STR);
                                     $produitsIdStatement->execute();
@@ -66,10 +66,12 @@
                                         $produitStatement->execute();
                                         $produit = $produitStatement->fetch(PDO::FETCH_ASSOC);
                                         $prixTotal += $produit['prixProduit'];
-                                        echo($produit['nomProduit'].' ');
+                                        echo($produit['nomProduit'].'(x'.$id['quantiteCommandés'].') | ');
                                     }
                                 ?>
         </p>
+        <hr >
+        <p class="fs-5 fw-lighter"><span class="fw-bold m-3">Prix Total :</span> <?php echo($prixTotal); ?> dh</p>
         <hr >
         <p class="fs-5 fw-lighter"><span class="fw-bold m-3">Etat de la commande :</span> <?php echo($commande['statutCommande']); ?></p>
         <?php if($commande['statutCommande']==="Non confirmé"){ ?>
