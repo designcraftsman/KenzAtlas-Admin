@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="messages.php">
                     <i class="fa-solid fa-message"></i>
                     <span>Messages</span>
                 </a>
